@@ -1,1 +1,102 @@
+probleme 1 
+
+
+Début
+    Tab1 ← [3, 1, 7, 9]
+    Tab2 ← [2, 4, 1, 9, 3]
+
+    somme ← 0
+
+    // Parcours de Tab1
+    Pour i de 0 à taille(Tab1) - 1 faire
+        Si Tab1[i] n'appartient pas à Tab2 alors
+            somme ← somme + Tab1[i]
+        FinSi
+    FinPour
+
+    // Parcours de Tab2
+    Pour i de 0 à taille(Tab2) - 1 faire
+        Si Tab2[i] n'appartient pas à Tab1 alors
+            somme ← somme + Tab2[i]
+        FinSi
+    FinPour
+
+ probleme 2
+
+ 1. Procédure dot_product
+
+ Le produit scalaire de deux vecteurs est : 
+
+ps=v1[0]×v2[0]+v1[1]×v2[1]+...+v1[n−1]×v2[n−1]
+
+ Pseudo-code (procédure)
+Procédure dot_product(v1, v2, n, ps)
+    ps ← 0
+
+    Pour i de 0 à n-1 faire
+        ps ← ps + v1[i] * v2[i]
+
+    FinPour
+FinProcédure
+
+ Ici :
+
+v1, v2 → tableaux (vecteurs)
+ps → résultat (produit scalaire)
+ 2. Vérifier si deux vecteurs sont orthogonaux
+
+ Deux vecteurs sont orthogonaux si :
+
+produit scalaire = 0
+ Algorithme avec la procédure
+Début
+    Lire n   // nombre de couples
+
+    Pour k de 1 à n faire
+        Lire taille
+
+        Lire v1
+        Lire v2
+
+        Appeler dot_product(v1, v2, taille, ps)
+
+        Si ps == 0 alors
+            Afficher "Orthogonaux"
+        Sinon
+            Afficher "Non orthogonaux"
+        FinSi
+    FinPour
+Fin
+
+ 3. Version avec fonction (au lieu de procédure)
+
+
+ Fonction dot_product
+Fonction dot_product(v1, v2, n)
+    ps ← 0
+
+    Pour i de 0 à n-1 faire
+        ps ← ps + v1[i] * v2[i]
+    FinPour
+
+    Retourner ps
+FinFonction
+ Algorithme avec fonction
+Début
+    Lire n
+
+    Pour k de 1 à n faire
+        Lire taille
+        Lire v1
+        Lire v2
+
+        ps ← dot_product(v1, v2, taille)
+
+        Si ps == 0 alors
+            Afficher "Orthogonaux"
+        Sinon
+            Afficher "Non orthogonaux"
+        FinSi
+    FinPour
+Fin
 datastructures
